@@ -1,0 +1,28 @@
+//
+//  GodHeader.pch
+//  iBantang
+//
+//  Created by cloudtopxm on 16/1/18.
+//  Copyright © 2016年 orange. All rights reserved.
+//
+
+#ifndef GodHeader_pch
+#define GodHeader_pch
+
+/* OC 与 Swift 的桥文件 */
+#import "iBantang-Bridging-Header.h"
+#import "iBantang-Swift.h"
+
+#define KSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+#define KSCREEN_SIZE    [UIScreen mainScreen].bounds.size
+#define KSCREEN         [UIScreen mainScreen].bounds
+#define SCALAE          KSCREEN_WIDTH / 320.0
+
+//主题
+#define OCTHEMECOLOR [UIColor colorWithRed:229.f / 255.f green:66.f / 255.f blue:66.f / 255 alpha:1]
+#define OCTHEMELESSCOLOR [UIColor colorWithRed:253.f / 255.f green:185.f / 255.f blue:19.f / 255 alpha:1]
+#define OCTHEMEBACKGROUDCOLOR [UIColor colorWithRed:238.f / 255.f green:238.f / 255.f blue:238.f / 255 alpha:1]
+#define OCLINE [UIColor colorWithRed:226.f / 255.f green:226.f / 255.f blue:226.f / 255.f alpha:1]
+
+#endif /* GodHeader_pch */
