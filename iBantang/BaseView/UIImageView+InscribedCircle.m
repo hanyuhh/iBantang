@@ -67,20 +67,22 @@
         return nil;
     }
     
+    CGFloat scalae;
     if (size.width == size.height) {
         size.width = size.height = [UIScreen mainScreen].bounds.size.width;
+        scalae = 1;
     } else {
-        CGSize temp = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * size.height / size.width);
+        scalae = size.width / size.height;
+        CGSize temp = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width / scalae);
         size = temp;
     }
-    
     
     NSMutableArray <NSDictionary *> *jo_inscribedCircle = [[[NSUserDefaults standardUserDefaults] objectForKey:@"jo_inscribedCircle"] mutableCopy];
     if (!jo_inscribedCircle) {
         jo_inscribedCircle = [NSMutableArray new];
     }
     
-    NSString *key = [NSString stringWithFormat:@"w%f h%f %@", size.width, size.height, backgroudColor];
+    NSString *key = [NSString stringWithFormat:@"%f-%@", scalae, backgroudColor];
     UIImage  *image = nil;
     for (NSDictionary *dict in jo_inscribedCircle) {
         if ([dict objectForKey:key]) {
