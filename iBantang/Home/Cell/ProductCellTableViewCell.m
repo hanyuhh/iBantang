@@ -259,16 +259,18 @@
     [_likes sizeToFit];
     [_likes o_height:20];
     
+    NSUInteger count = model.likes_list.count;
     for (UIImageView *temp in _likesUserheader) {
         NSUInteger index = [_likesUserheader indexOfObject:temp];
-        NSUInteger count = model.likes_list.count;
         
-        if (index < count - 1 && index != _likesUserheader.count - 1) {
+        if (index < count && temp != [_likesUserheader lastObject]) {
             temp.hidden = NO;
             NSString *url = [NSString stringWithFormat:@"http://7te7t9.com2.z0.glb.qiniucdn.com/%@", [model.likes_list objectAtIndex:index].a];
             [temp sd_setImageWithURL:([NSURL URLWithString:url])];
-        } else if (index != _likesUserheader.count - 1) {
-            temp.hidden = YES;
+        } else {
+            if (temp != [_likesUserheader lastObject]) {
+                temp.hidden = YES;
+            }
         }
     }
 }
