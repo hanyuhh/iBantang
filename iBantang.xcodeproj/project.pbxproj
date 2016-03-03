@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136DD0231C887AE600FD58F3 /* UIImageView+InscribedCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 136DD0221C887AE600FD58F3 /* UIImageView+InscribedCircle.m */; };
 		68657EE7B096939239277709 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA305D4E1C0894BFD2BC8D49 /* libPods.a */; };
 		BC108F5E1C61E1CD0035FA1F /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC108F5D1C61E1CD0035FA1F /* InventoryViewController.m */; };
 		BC12D0E41C59B60300A31F59 /* UINavigationBar+Transparent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC12D0E31C59B60300A31F59 /* UINavigationBar+Transparent.m */; };
@@ -69,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		136DD0211C887AE600FD58F3 /* UIImageView+InscribedCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+InscribedCircle.h"; sourceTree = "<group>"; };
+		136DD0221C887AE600FD58F3 /* UIImageView+InscribedCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+InscribedCircle.m"; sourceTree = "<group>"; };
 		3015ABE7B970EF465F0095E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B44A50EC73973EE63A4F99A3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BC108F5C1C61E1CD0035FA1F /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				BCE3F8B41C4CC24B00CC4339 /* UILabel+LayoutTextRect.m */,
 				BCE3F8B11C4CC24B00CC4339 /* UIImageView+ImageSize.h */,
 				BCE3F8B21C4CC24B00CC4339 /* UIImageView+ImageSize.m */,
+				136DD0211C887AE600FD58F3 /* UIImageView+InscribedCircle.h */,
+				136DD0221C887AE600FD58F3 /* UIImageView+InscribedCircle.m */,
 				BC12D0E21C59B60300A31F59 /* UINavigationBar+Transparent.h */,
 				BC12D0E31C59B60300A31F59 /* UINavigationBar+Transparent.m */,
 				BC12D0E51C59BB1D00A31F59 /* UIViewController+CleanNavBarBottomLine.h */,
@@ -555,7 +560,7 @@
 				TargetAttributes = {
 					BCE3F8711C4CC0EA00CC4339 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 62R3UFKJLW;
+						DevelopmentTeam = V6DK7W448W;
 					};
 					BCE3F88A1C4CC0EA00CC4339 = {
 						CreatedOnToolsVersion = 7.2;
@@ -699,6 +704,7 @@
 				BC12D0E41C59B60300A31F59 /* UINavigationBar+Transparent.m in Sources */,
 				D845D4571C78C7BA00D3EB3E /* SquareGroudView.m in Sources */,
 				BCF87C5F1C607C4F00D19981 /* HeadingView.m in Sources */,
+				136DD0231C887AE600FD58F3 /* UIImageView+InscribedCircle.m in Sources */,
 				BCE3F8AB1C4CC11E00CC4339 /* AppDelegate.m in Sources */,
 				D87DC3491C7B407800992432 /* PhotoGroudView.m in Sources */,
 				BC5C48BB1C633DE400AD7303 /* HomeBaseViewController.m in Sources */,

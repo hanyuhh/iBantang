@@ -12,6 +12,7 @@
 #import "UIView+ViewRect.h"
 #import "UILabel+LayoutTextRect.h"
 #import "UIImageView+ImageSize.h"
+#import "UIImageView+InscribedCircle.h"
 #import "UINavigationBar+Transparent.h"
 #import "UIViewController+CleanNavBarBottomLine.h"
 

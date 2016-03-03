@@ -129,36 +129,42 @@
     
     _likesUserheader = [NSMutableArray new];
     UIImageView *lastHeaderView;
-    int count = (int)((KSCREEN_WIDTH - 20) / 38);
+    int count = KSCREEN_WIDTH < 414 ? 8 : 11;
     
     for (int index = 0; index < count; index ++) {
         UIImageView *header = [UIImageView new];
+        [header jo_InscribedCircleWidthBackgroud:[UIColor whiteColor]];
         [bottomView addSubview:header];
+        
         [_likesUserheader addObject:header];
         
         [header mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake((KSCREEN_WIDTH - 20) / count - 10, (KSCREEN_WIDTH - 20) / count - 10));
             make.centerY.equalTo(bottomView).offset(-20);
+            make.height.equalTo(header.mas_width);
         }];
         
         if (!lastHeaderView) {
-            header.layer.cornerRadius = ((KSCREEN_WIDTH - 20) / count - 10) / 2;
-            header.layer.masksToBounds = YES;
-            [header mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(bottomView).offset(10);
+            [header mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(bottomView).offset(6);
             }];
-        } else if (index + 1 >= count) {
-            [header mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.right.equalTo(bottomView.mas_right).offset(-10);
-                make.size.mas_equalTo(CGSizeMake(20 / 3, 36 / 3));
-            }];
-            header.image = [UIImage imageNamed:@"ic_arrow_right_gray"];
         } else {
-            header.layer.cornerRadius = ((KSCREEN_WIDTH - 20) / count - 10) / 2;
-            header.layer.masksToBounds = YES;
-            [header mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(lastHeaderView.mas_right).offset(10);
+            [header mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(lastHeaderView.mas_right).offset(6);
+                make.width.equalTo(lastHeaderView);
+                if (index == count - 1) {
+                    make.right.equalTo(bottomView).offset(-6);
+                }
             }];
+        }
+        if (index == count - 1) {
+            UIImageView *arrow = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"ic_arrow_right_gray"]];
+            [header addSubview:arrow];
+            [arrow mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.center.equalTo(header);
+                make.size.mas_equalTo(CGSizeMake(20 / 2.2, 36 / 2.2));
+            }];
+        } else {
+            
         }
         lastHeaderView = header;
     }
@@ -184,7 +190,7 @@
         indexStr = [NSString stringWithFormat:@"ind%ld",(long)index + 1];
     }
     _indexView.image = [UIImage imageNamed:indexStr];
-
+    
     // title
     _title.text = model.title;
     [_title sizeToFit];
@@ -255,12 +261,14 @@
     
     for (UIImageView *temp in _likesUserheader) {
         NSUInteger index = [_likesUserheader indexOfObject:temp];
-        if (index > model.likes_list.count - 1) {
-            temp.hidden = YES;
-        } else if (!(temp == [_likesUserheader lastObject])){
+        NSUInteger count = model.likes_list.count;
+        
+        if (index < count - 1 && index != _likesUserheader.count - 1) {
             temp.hidden = NO;
             NSString *url = [NSString stringWithFormat:@"http://7te7t9.com2.z0.glb.qiniucdn.com/%@", [model.likes_list objectAtIndex:index].a];
             [temp sd_setImageWithURL:([NSURL URLWithString:url])];
+        } else if (index != _likesUserheader.count - 1) {
+            temp.hidden = YES;
         }
     }
 }
