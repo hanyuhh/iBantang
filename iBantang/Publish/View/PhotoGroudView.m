@@ -153,7 +153,7 @@
     textLabel.text = [[[self.groupArray objectAtIndex:indexPath.row] allKeys] objectAtIndex:0];
     [textLabel sizeToFit];
     
-    detailTextLabel.text = [NSString stringWithFormat:@"%ld张", [[self.groupArray objectAtIndex:indexPath.row] objectForKey:textLabel.text].count];
+    detailTextLabel.text = [NSString stringWithFormat:@"%u张", [[self.groupArray objectAtIndex:indexPath.row] objectForKey:textLabel.text].count];
     [textLabel sizeToFit];
     
     if ([[self.groupArray objectAtIndex:indexPath.row] objectForKey:textLabel.text].count > 0) {

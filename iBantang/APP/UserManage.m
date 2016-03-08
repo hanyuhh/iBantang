@@ -24,9 +24,8 @@ static UserManage  *sharesingleton = nil;//必须声明为一个静态方法
     
     @synchronized(self){
         static dispatch_once_t onceToken;
-        
         dispatch_once(&onceToken, ^{
-            
+
             sharesingleton = [[self alloc] init];
             [UserManage getLocalInfo:sharesingleton];
         });
@@ -38,9 +37,14 @@ static UserManage  *sharesingleton = nil;//必须声明为一个静态方法
 //限制方法，类只能初始化一次
 //alloc的时候调用
 + (id) allocWithZone:(struct _NSZone *)zone{
-    if(sharesingleton == nil){
-        sharesingleton = [super allocWithZone:zone];
-    }
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        if(sharesingleton == nil){
+            sharesingleton = [super allocWithZone:zone];
+        }
+    });
     return sharesingleton;
 }
 

@@ -126,7 +126,7 @@
         [titleView sd_setImageWithURL:([NSURL URLWithString:[arr objectAtIndex:[_boxs indexOfObject:imageView]].pic3])];
         SquareDynamic *dynamic = [arr objectAtIndex:[_boxs indexOfObject:imageView]].dynamic;
         UILabel *number = [[imageView viewWithTag:1000] viewWithTag:1002];
-        number.text = [NSString stringWithFormat:@"%ld浏览    %ld帖子", dynamic.views, dynamic.posts];
+        number.text = [NSString stringWithFormat:@"%ld浏览    %ld帖子", (long)dynamic.views, (long)dynamic.posts];
         [number sizeToFit];
     }
 }
